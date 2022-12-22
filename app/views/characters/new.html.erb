@@ -1,2 +1,13 @@
-<h1>Characters#new</h1>
-<p>Find me in app/views/characters/new.html.erb</p>
+<h1>Crea un Nuevo Personaje de Star Wars</h1>
+
+<%= form_with url: characters_path, method: :post do |f| %>
+  <%= f.label :Nombre %>
+  <%= f.text_field :name %>
+  <%= f.label :Actor %>
+  <%= f.text_field :actor %>
+  <%= f.label :Descripción %>
+  <%= f.text_field :info %>
+  <%= f.label :Imagen %>
+  <%= f.text_field :image_url %>
+  <%= f.submit %>
+<% end %>

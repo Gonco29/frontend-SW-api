@@ -4,9 +4,11 @@
       <% @characters.each do |character| %>
         <div class="col-4 mt-2 mb-2">
           <div class="card" style="width: 18rem;">
+            <%= link_to character_path(character['id']) do %>
             <img src="<%= character["image_url"] %>" class="card-img-top" alt="...">
+            <% end %>
             <div class="card-body">
-              <h5 class="card-title"><%= character["name"] %></h5>
+              <h5 class="card-title"><%= link_to character["name"], character_path(character['id']) %></h5>
               <p class="card-text"><%= character["info"] %></p>
               <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
             </div>
@@ -15,3 +17,30 @@
       <% end %>
   </div>
 </div>
+
+<h1>Parallax Tilt Effect Cards</h1>
+<p>Hover over the cards.</p>
+
+<section class="main">
+
+  <div class="wrap wrap--1">
+    <div class="container container--1">
+      <p>01. Normal</p>
+    </div>
+  </div>
+
+  <div class="wrap wrap--2">
+    <div class="container container--2">
+      <p>02. Reverse</p>
+    </div>
+  </div>
+
+  <div class="wrap wrap--3">
+    <div class="container container--3">
+      <p>03. Normal</p>
+    </div>
+  </div>
+
+</section>
+
+<a href="https://abubakersaeed.netlify.app/designs/d10-parallax-tilt-effect-cards" class="abs-site-link" rel="nofollow noreferrer" target="_blank">abs/designs/d10-parallax-tilt-effect-cards</a>

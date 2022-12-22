@@ -1,6 +1,6 @@
 class CharactersController < ApplicationController
-require "rest-client"
-require "json"
+  require "rest-client"
+  require "json"
 
   def index
     result = RestClient.get("http://localhost:3001/api/v1/characters")
@@ -17,6 +17,12 @@ require "json"
   end
 
   def create
+    result = RestClient.post('http://localhost:3001/api/v1/characters', { 'name' => params['name'], 'actor' => params['actor'], 'info' => params['info'], 'image_url' => params['iamge_url'] }.to_json, { content_type: :json, accept: :json } )
+    if result.code == 201
+      redirect_to characters_path
+    else
+      render '/characters/new', status: :unprocessable_entity
+    end
   end
 
   def edit
