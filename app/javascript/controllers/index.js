@@ -10,5 +10,3 @@ application.register("hello", HelloController)
 import NavbarController from "./navbar_controller"
 application.register("navbar", NavbarController)
 
-import Dinamiccard from "./dinamiccard"
-application.register()

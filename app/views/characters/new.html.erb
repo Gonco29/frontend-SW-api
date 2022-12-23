@@ -11,3 +11,25 @@
   <%= f.text_field :image_url %>
   <%= f.submit %>
 <% end %>
+
+
+
+
+<div class="container">
+  <div class="row">
+      <% @characters.each do |character| %>
+        <div class="col-4 mt-2 mb-2">
+          <div class="card" style="width: 18rem;">
+            <%= link_to character_path(character['id']) do %>
+            <img src="<%= character["image_url"] %>" class="card-img-top" alt="...">
+            <% end %>
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to character["name"], character_path(character['id']) %></h5>
+              <p class="card-text"><%= character["info"] %></p>
+              <%# <a href="#" class="btn btn-primary">Go somewhere</a> %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
