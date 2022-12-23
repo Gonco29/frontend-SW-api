@@ -3,6 +3,25 @@
     <h1>PERSONAJES DE <strong>STAR WARS</strong>!</h1>
 
     <p>Guía no oficial de todos los personajes del universo de Star Wars.</p>
-    <a class="btn btn-flat" href="#">EXPLORAR PERSONAJES</a>
+    <button> <%= link_to "Explorar Personajes", characters_path %> </button>
+  </div>
+</div>
+
+<br>
+<div class="container">
+  <h2>PERSONAJES</h2>
+  <div class="row">
+      <% @characters.sample(6).each do |character| %>
+        <div class="col-2 mt-2 mb-2">
+          <div class="card" >
+            <%= link_to character_path(character['id']) do %>
+            <img src="<%= character["image_url"] %>" class="card-img-top" alt="...">
+            <% end %>
+            <div class="card-body">
+              <p> <%= link_to character["name"], character_path(character['id']) %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
   </div>
 </div>

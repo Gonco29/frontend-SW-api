@@ -10,7 +10,7 @@
 }
 
 
-.container {
+.container_card {
   display: flex;
   justify-content: center;
   margin-top: 50px;
@@ -57,7 +57,7 @@ h1 {
   margin-bottom: 40px;
   font-size: 35px;
   font-weight: bolder;
-  color: coral;
+  color: #9b1308;;
 }
 
 .description {
@@ -84,7 +84,7 @@ h1 {
 }
 button {
   margin-top: 10px;
-  background: #333;
+  background: #9b1308;;
   font-size: 1em;
   letter-spacing: .1em;
   text-decoration: none;
@@ -95,6 +95,6 @@ button {
   transition: all 0.3s linear;
   margin-left: 50px;
    &:hover {
-    background: #666;
+    background: #c51407;;
   }
 }

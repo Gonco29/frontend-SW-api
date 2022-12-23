@@ -2,19 +2,6 @@
 
 <div class="container">
   <div class="row">
-    <% @characters.each do |character| %>
-      <div class="col-3 mt-2 mb-2 d-flex">
-        <div class="card__collection clear-fix">
-          <div class="cards cards--two">
-            <%= link_to character_path(character['id']) do %>
-              <img src="<%= character["image_url"] %>" class="img-responsive" alt="Cards Image">
-            <% end %>
-            <span class="cards--two__rect"></span>
-            <span class="cards--two__tri"></span>
-            <p> <%= link_to character["name"], character_path(character['id']) %> </p>
-          </div>
-        </div>
-      </div>
-    <% end %>
+  <%= render "shared/index_card" %>
   </div>
 </div>
